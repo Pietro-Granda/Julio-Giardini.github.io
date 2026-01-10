@@ -266,6 +266,41 @@
   window.addEventListener("scroll", onBackTop, { passive: true });
   onBackTop();
 
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-  
+        const formData = new FormData(contactForm);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const message = formData.get('message') || '';
+
+        const subject =
+            htmlLang === 'en'
+                ? `Message from portfolio – ${name}`
+                : `Messaggio dal portfolio – ${name}`;
+
+        const bodyLines =
+            htmlLang === 'en'
+                ? [`Name: ${name}`, `Email: ${email}`, '', message]
+                : [`Nome: ${name}`, `Email: ${email}`, '', message];
+
+        const mailto =
+            `mailto:boscaratopietro@gmail.com` +
+            `?subject=${encodeURIComponent(subject)}` +
+            `&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+        window.location.href = mailto;
+
+        if (contactFeedback) {
+            contactFeedback.textContent =
+                htmlLang === 'en'
+                    ? 'Thank you! Your email app should open now. If it does not, you can write me directly at boscaratopietro@gmail.com 😊'
+                    : 'Grazie! Il tuo programma di posta dovrebbe aprirsi ora. Se non si apre, puoi scrivermi direttamente a boscaratopietro@gmail.com 😊';
+        }
+
+        contactForm.reset();
+    });
+}
+
 })();
