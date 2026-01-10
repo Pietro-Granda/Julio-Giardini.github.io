@@ -773,4 +773,49 @@ input:focus, select:focus, textarea:focus{
   #chi-siamo .media-img{
     height: 420px;
   }
+
+ footer {
+    text-align: center;
+    padding: 18px 10px;
+    background: rgba(7,20,11,0.70);
+    color: white;
+    margin-top: 30px;
+}
+
+/* CONTATTO */
+.contact p {
+    font-size: 1rem;
+    margin-bottom: 0px;
+}
+
+/* Formulário de contato */
+.contact-form {
+    margin-top: 18px;
+    max-width: 420px;
+}
+
+.form-row {
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.form-btn {
+    margin-top: 4px;
+    width: 100%;
+}
+
+.contact-feedback {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
 }
